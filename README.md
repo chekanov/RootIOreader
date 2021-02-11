@@ -7,6 +7,13 @@ However, the package compiled using JDK 1.6 (and above) creates a jar file that 
 
 # How to debug this problem.
 
+```
+git@github.com:chekanov/RootIOreader.git
+cd RootIOreader
+```
+(assumes Linux)
+
+
 Start with installed  JDK 1.8 that supports the JDK target version 1.5. Compile the package:
 
 ```
