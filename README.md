@@ -5,14 +5,14 @@ shows a problem with JDK versions.
 This example shows that compiling this code using JDK 1.5 creates a functional package that can read the file "Example.root". The JDK 1.5 compiled package can be executed on new versions of JDK 1.8 - JDK 15.
 However, the package compiled using JDK 1.6 (and above) creates a jar file that cannot be used for reading such files. 
 
-# How to debug this problem.
+# How to recreate this problem
 
 ```
 git clone git@github.com:chekanov/RootIOreader.git
 cd RootIOreader
 ```
-This assumes Linux and installed  JDK 1.8 that supports the JDK target version 1.5..
-Compile the package:
+This assumes Linux and installed  JDK 1.8 that supports the JDK target/source version 1.5.
+Compile the package using JDK target=1.5:
 
 ```
 ant
@@ -27,7 +27,7 @@ ant run
 
 It will read objects from the file "Example.root".
 
-Now change the target JDK version to 1.8. To do this, change the line:
+Now change the target JDK version to 1.8. To do this, modify the line:
 
 ```
  <property name="jdkversion" value="1.5" />
@@ -39,8 +39,7 @@ to
 <property name="jdkversion" value="1.8" />
 ```
 
-in the file "build.xml" (it can be also 1.6, 1.7). 
-Then compile the package again and run it:
+in the file "build.xml" (it can be also 1.6, 1.7). Then compile the package again and run it:
 
 ```
 ant clean; ant; ant run
@@ -84,7 +83,7 @@ Object hep.io.root.proxy.TString has length=1025
 ```
 
 
-Conclusion: Only JDK 1.5 can create a functional program that can read Example.root.
-Since JDK 1.8 (that supports JDK 1.5 target) will be discontinued, this package cannot be used for future Java versions.
+Conclusion: Only JDK 1.5 can create a functional program that can read the file Example.root.
+Since JDK 1.8 (that supports the JDK 1.5 target) will be discontinued, this package cannot be used for future Java versions.
 
 
