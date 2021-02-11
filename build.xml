@@ -1,13 +1,11 @@
 <project name="rootio" default="dist" basedir=".">
     <description>
-       ROOT IO build file
+       ROOTIO build file
     </description>
-
 
    <echo> Build  ROOTIO:</echo>
    <echo> *********************************************************</echo>
    <echo> ant         - make jar file</echo>
-   <echo> ant javadoc - make javadoc</echo>
    <echo> ant clean   - clean the project</echo>
    <echo> ***********************************************************</echo>
 
@@ -41,7 +39,6 @@
   <target name="copybeforecompile" depends="init">
 
 
-
  <!-- make necessary manifest -->
   <manifest file="${src.dir}/META-INF/MANIFEST.MF">
    <attribute name="Built-By" value="${build.author}"/>
@@ -54,8 +51,6 @@
       <fileset dir="${src.dir}">
         <patternset>
           <exclude name="**/*.java" />
-          <exclude name="**/*.odg" />
-          <exclude name="**/*.odp" />
           <exclude name="**/*.*~" />
           <exclude name="**/*.bak" />
         </patternset>
@@ -84,9 +79,8 @@
          basedir="${build}" 
          manifest="${build}/META-INF/MANIFEST.MF"/>
   </target>
-
-
   
+
 
 
 <target name="run" depends="dist">
@@ -96,12 +90,8 @@
            failonerror="true"
            maxmemory="512m"
            >
-         <!-- add a command line arg: <arg value="-h"/> -->
           <arg value="-h"/>
          <classpath>
-     <!-- use the value of the ${classpath} property in the classpath -->
-     <!--    <pathelement path="${classpath_run}"/> -->
-     <!-- include all jar files  -->
          <pathelement path="${java.class.path}"/>
         <fileset dir=".">
             <include name="rootio.jar"/>
@@ -109,33 +99,10 @@
         <fileset dir="lib">
             <include name="**/*.jar"/>
         </fileset>
-
   </classpath>
        </java>
 
   </target>
-
-
-
-<target name="javadoc" depends="init">
-  <javadoc destdir="${javadoc.dir}"
-           author="false"
-           version="false"
-           use="true"
-             source="${build.sourceversion}" 
-           overview="doc/symbols.html"
-           link="http://java.sun.com/j2se/1.6.0/docs/api"
-           windowtitle="HePhysics 1.0 API" classpathref="classpath">
-    <packageset dir="${src.dir}" >
-    </packageset>
-
-
-    <bottom><![CDATA[<i>&copy; Copyright 2009 S.Chekanov. All Rights Reserved.
-      <br><a href="http://jwork.org/jhepwork/">HePhysics</a> : HEP data analysis</i>]]></bottom>
-  </javadoc>
-</target>
-
-
 
 
   <target name="clean"
