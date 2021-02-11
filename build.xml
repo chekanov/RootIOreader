@@ -143,5 +143,8 @@
     <delete dir="${build}"/>
     <delete dir="${dist}"/>
     <delete file="rootio.jar"/>
+    <delete>
+    <fileset dir="." includes="*.j"/> 
+    </delete>
   </target>
 </project>
