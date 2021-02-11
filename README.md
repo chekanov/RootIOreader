@@ -82,6 +82,9 @@ Object hep.io.root.proxy.TString has length=1025
      [java] 	at java.base/java.lang.ClassLoader.defineClass1(Native Method)
 ...
 ```
+
+
+Conclusion: Only JDK 1.5 can create a functional program that can read Example.root.
 Since JDK 1.8 (that supports JDK 1.5 target) will be discontinued, this package cannot be used for future Java versions.
 
 
