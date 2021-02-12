@@ -24,9 +24,7 @@ public class Main
 
         System.setProperty("useNIO","true");
         System.setProperty("debugRoot","true"); 
-        FileRoot reader = new FileRoot("Example.root");
-        System.out.println(reader.toString());
- 
+        RootFileReader reader = new RootFileReader("Example.root"); 
   }
 
 }
