@@ -47,7 +47,7 @@ public class RootHistogramBrowser extends JPanel implements TreeSelectionListene
    private JASHist plot;
    private JTree tree;
    
-   RootHistogramBrowser() throws IOException
+   public RootHistogramBrowser() throws IOException
    {
       super(new BorderLayout());
       tree = new JTree(emptyTree);

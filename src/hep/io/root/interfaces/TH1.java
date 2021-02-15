@@ -62,4 +62,13 @@ public interface TH1 extends hep.io.root.RootObject, hep.io.root.interfaces.TNam
 
    /** Z axis descriptor */
    hep.io.root.interfaces.TAxis getZaxis();
-}
+
+   /* ROOT 6*/
+   boolean ClearUnderflowAndOverflow();
+
+   TObject   Clone(String newname);
+
+   void ExtendAxis(double x, hep.io.root.interfaces.TAxis axis);
+
+   int    GetNcells(); 
+   }

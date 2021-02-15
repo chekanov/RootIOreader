@@ -7,9 +7,8 @@ package hep.io.root.interfaces;
 
 public interface TString extends hep.io.root.RootObject
 {
-
-  public final static int rootIOVersion=2;
-  public final static int rootCheckSum=95257;
+ //  public final static int rootIOVersion = 1;
+ //  public final static int rootCheckSum = 1332649469;
 
    public String toString();
 }

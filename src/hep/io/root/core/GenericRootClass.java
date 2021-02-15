@@ -29,9 +29,6 @@ public class GenericRootClass extends BasicRootClass
    private StreamerInfo streamerInfo;
    private String name;
   
-   //public static Class common=null;
-
-
 
    public GenericRootClass(String name, StreamerInfo info)
    {
@@ -137,13 +134,11 @@ public class GenericRootClass extends BasicRootClass
    {
 
 
+      if (debugRoot) System.out.println("GenericRootClass() creates class:"+fullName); 
       try
       {
          RootClassLoader loader = factory.getLoader();
          Class result = loader.loadClass(fullName);
-
-         if (debugRoot) System.out.println("GenericRootClass() creates class:"+fullName);
-         //common=result;
 
          // Some sanity checks
          if (!RootObject.class.isAssignableFrom(result))

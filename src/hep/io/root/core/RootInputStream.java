@@ -476,9 +476,16 @@ class RootInputStream extends DataInputStream implements RootInput
    }
    static void skipObject(RootInput in) throws IOException
    {
-      int version = in.readShort();
-      if ((version & 0x4000) == 0) throw new IOException("Cannot skip object with no length");
-      
+
+       int version = in.readShort();
+       if ((version & 0x4000) == 0) {
+                     //long  a=in.readLong();
+                     //a=in.readShort();
+                     //a=in.readShort();
+                     // throw new IOException("Cannot skip object with no length");
+                      return;
+                      };
+ 
       int byteCount = ((version & 0x3fff) << 16) + in.readUnsignedShort();
       System.err.println("skipping "+byteCount);
       in.skipBytes(byteCount);

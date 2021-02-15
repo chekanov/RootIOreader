@@ -13,16 +13,13 @@ import java.io.*;
 
 
 /**
- * Read ROOt files 
+ * Read ROOt files. 
  */
 public class Main
 {
   
-	
    public static void main(String[] args) throws IOException 
    {
-
-        System.setProperty("useNIO","true");
         System.setProperty("debugRoot","true"); 
         RootFileReader reader = new RootFileReader("Example.root"); 
   }

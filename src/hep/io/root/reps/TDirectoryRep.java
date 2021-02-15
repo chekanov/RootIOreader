@@ -109,7 +109,7 @@ public abstract class TDirectoryRep extends AbstractRootObject implements TDirec
       return fSeekDir;
    }
 
-   public long getSeekKeys()
+   public long  getSeekKeys()
    {
       return fSeekKeys;
    }

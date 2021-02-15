@@ -23,13 +23,9 @@ public class InterfaceBuilder
    private File base;
    private hep.io.root.core.NameMangler nameMangler = hep.io.root.core.NameMangler.instance();
 
-
    /** Creates new InterfaceBuilder */
    public InterfaceBuilder(File dir)
    {
-
-     System.setProperty("debugRoot","true");
-
       base = dir;
    }
 
@@ -58,7 +54,7 @@ public class InterfaceBuilder
             // See if this class already exists
             try
             {
-               Class k = Class.forName("jhep.io.root.interfaces." + name);
+               Class k = Class.forName("hep.io.root.interfaces." + name);
                System.out.println("Skipping " + name);
             }
             catch (ClassNotFoundException x)

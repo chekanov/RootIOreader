@@ -82,20 +82,14 @@ public class RootClassLoader extends ClassLoader
 
          if (debugRoot) {
   
-          System.out.println("Object "+name+" has length="+Long.toString(data.length));
+          System.out.println("Object length="+Long.toString(data.length));
         //java.util.zip.Checksum crc32 = new java.util.zip.CRC32();
         //crc32.update(data, 0, data.length);
         //System.out.println("Checksum="+Long.toString(crc32.getValue()));
         };
 
-
-         //Class result = hep.io.root.core.GenericRootClass.common;
-
-         int xlength=data.length; 
-         int xstart=0;
-
-         Class result = defineClass(name, data, xstart, xlength);
-
+ 
+         Class result = defineClass(name, data, 0, data.length);
          classMap.put(result, gc);
 
 

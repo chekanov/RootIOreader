@@ -17,7 +17,7 @@ public interface TDirectory extends hep.io.root.RootObject, TNamed
 
    public long getSeekDir();
 
-   public long getSeekKeys();
+   public long  getSeekKeys();
 
    public long getSeekParent();
 

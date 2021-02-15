@@ -7,9 +7,6 @@ package hep.io.root.interfaces;
 
 public interface TList extends hep.io.root.RootObject, TSeqCollection
 {
-
-        public final static int rootIOVersion=5;
-        public final static int rootCheckSum=1774568379;
-
-
+   public final static int rootIOVersion = 4;
+   public final static int rootCheckSum = 2043183783;
 }
