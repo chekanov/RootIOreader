@@ -1,13 +1,14 @@
 # RootIOreader
 
-An example of the RootIO package http://java.freehep.org/freehep-rootio/ that 
-shows a problem with JDK versions. 
+This program shows how to read ROOT files (https://root.cern/) using Java.
+It illustrates problems with the compatibility of JDK versions. 
 This example shows that compiling this code using JDK 1.5 creates a functional package that can read the file "Example.root". The JDK 1.5 compiled package can be executed on new versions of JDK 1.8 - JDK 15.
 However, the package compiled using JDK 1.6 (and above) creates a jar file that cannot be used for reading such files. 
 
-This compartibility issue affects several projects: http://jas.freehep.org/jas3/, https://github.com/diana-hep/root4j, https://atlaswww.hep.anl.gov/asc/jas4pp/
-etc. It is likely related to the Apache-BCEL library and may affect many other projects that rely on dynamic creation of Java clases. 
-The issue is visible on bugs.java.com at the following url JDK-8261887.  
+This compatibility issue affects several projects: http://java.freehep.org/freehep-rootio/  (original library),
+Jas3 http://jas.freehep.org/jas3/, Root4j https://github.com/diana-hep/root4j, Jas4pp https://atlaswww.hep.anl.gov/asc/jas4pp/
+etc.  The problem  is likely related to the Apache-BCEL library and may affect many other projects that rely on dynamic creation of Java classes. 
+The issue is visible on bugs.java.com under JDK-8261887 ticket number.  
 
 
 # How to recreate this problem
