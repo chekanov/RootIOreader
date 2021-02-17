@@ -28,7 +28,8 @@ class RootInputStream extends DataInputStream implements RootInput
    private static int HDRSIZE = 9;
    private Hashtable readMap = new Hashtable();
    private RootInput top;
-   
+   private int last = -1;
+ 
    public enum ZAlgo {
        GLOBAL_SETTING,
        ZLIB,
@@ -101,7 +102,63 @@ class RootInputStream extends DataInputStream implements RootInput
    {
       ((RootByteArrayInputStream) in).setOffset(0);
    }
-   
+  
+
+     static int[] readVarWidthArrayInt(RootInput in) throws IOException
+   {
+       int n = in.readInt();
+       int[] data = new int[n];
+       for (int i = 0;  i < n;  i++)
+           data[i] = in.readInt();
+       return data;
+   }
+
+   static byte[] readVarWidthArrayByte(RootInput in) throws IOException
+   {
+       int n = in.readInt();
+       byte[] data = new byte[n];
+       for (int i = 0;  i < n;  i++)
+           data[i] = in.readByte();
+       return data;
+   }
+
+   static short[] readVarWidthArrayShort(RootInput in) throws IOException
+   {
+       int n = in.readInt();
+       short[] data = new short[n];
+       for (int i = 0;  i < n;  i++)
+           data[i] = in.readShort();
+       return data;
+   }
+
+   static float[] readVarWidthArrayFloat(RootInput in) throws IOException
+   {
+       int n = in.readInt();
+       float[] data = new float[n];
+       for (int i = 0;  i < n;  i++)
+           data[i] = in.readFloat();
+       return data;
+   }
+
+   static double[] readVarWidthArrayDouble(RootInput in) throws IOException
+   {
+       int n = in.readInt();
+       double[] data = new double[n];
+       for (int i = 0;  i < n;  i++)
+           data[i] = in.readDouble();
+       return data;
+   }
+
+   static boolean[] readVarWidthArrayBoolean(RootInput in) throws IOException
+   {
+       int n = in.readInt();
+       boolean[] data = new boolean[n];
+       for (int i=0; i<n; i++)
+           data[i] = in.readBoolean();
+       return data;
+   }
+
+ 
    public int readArray(int[] data) throws IOException
    {
       return RootInputStream.readArray(this, data);
@@ -587,6 +644,14 @@ class RootInputStream extends DataInputStream implements RootInput
          System.out.println("dump["+i+"]: "+b+" "+c);
       }
       throw new IOException("dump");
+   }
+
+      public int getLast() {
+       return last;
+   }
+
+   public void setLast(int last) {
+       this.last = last;
    }
    
 }

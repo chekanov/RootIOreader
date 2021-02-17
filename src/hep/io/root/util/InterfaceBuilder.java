@@ -48,7 +48,20 @@ public class InterfaceBuilder
          List list = rfr.streamerInfo();
          for (Iterator i = list.iterator(); i.hasNext();)
          {
-            TStreamerInfo info = (TStreamerInfo) i.next();
+
+
+           // check
+           TStreamerInfo info = null;
+           try {
+            info = (TStreamerInfo) i.next();
+           } catch (ClassCastException  e) {
+                 e.printStackTrace();
+                 //System.err.println(e);
+                 continue;
+           }
+
+
+
             String name = info.getName();
 
             // See if this class already exists
@@ -63,8 +76,16 @@ public class InterfaceBuilder
                File f = ib.write(rc);
                System.out.println("Created " + f.getPath());
             }
+
+
+
          }
       }
+
+
+     System.out.println("All done!");
+
+
    }
 
    public File write(RootClass klass) throws IOException
