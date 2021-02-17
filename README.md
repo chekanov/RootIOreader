@@ -5,6 +5,10 @@ shows a problem with JDK versions.
 This example shows that compiling this code using JDK 1.5 creates a functional package that can read the file "Example.root". The JDK 1.5 compiled package can be executed on new versions of JDK 1.8 - JDK 15.
 However, the package compiled using JDK 1.6 (and above) creates a jar file that cannot be used for reading such files. 
 
+This compartibility issue affects several projects: http://jas.freehep.org/jas3/, https://github.com/diana-hep/root4j, https://atlaswww.hep.anl.gov/asc/jas4pp/
+etc.
+
+
 # How to recreate this problem
 
 ```
