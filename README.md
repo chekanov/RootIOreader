@@ -6,8 +6,8 @@ This example shows that compiling this code using JDK 1.5 creates a functional p
 However, the package compiled using JDK 1.6 (and above) creates a jar file that cannot be used for reading such files. 
 
 This compartibility issue affects several projects: http://jas.freehep.org/jas3/, https://github.com/diana-hep/root4j, https://atlaswww.hep.anl.gov/asc/jas4pp/
-etc. It is likely related to the Apache-BCEL library (and thus may affect many other projects that rely on dynamic creation of Java classes)
- 
+etc. It is likely related to the Apache-BCEL library and may affect many other projects that rely on dynamic creation of Java clases. 
+The issue is visible on bugs.java.com at the following url JDK-8261887.  
 
 
 # How to recreate this problem
