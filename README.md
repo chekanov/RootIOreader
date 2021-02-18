@@ -6,7 +6,7 @@ This example shows that compiling this code using JDK 1.5 creates a functional p
 However, the package compiled using JDK 1.6 (and above) creates a jar file that cannot be used for reading such files. 
 
 This compatibility issue affects several projects: http://java.freehep.org/freehep-rootio/  (original library),
-Jas3 http://jas.freehep.org/jas3/, Root4j https://github.com/diana-hep/root4j, Jas4pp https://atlaswww.hep.anl.gov/asc/jas4pp/
+Jas3 http://jas.freehep.org/jas3/, Root4j https://github.com/diana-hep/root4j, Jas4pp https://atlaswww.hep.anl.gov/asc/jas4pp/, DataMelt https://datamelt.org  
 etc.  The problem  is likely related to the Apache-BCEL library and may affect many other projects that rely on dynamic creation of Java classes. 
 The issue is visible on bugs.java.com under JDK-8261887 ticket number.  
 
